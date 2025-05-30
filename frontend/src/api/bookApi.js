@@ -8,6 +8,7 @@ const api = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
+  withCredentials: true, // ✅ 쿠키를 백엔드로 전달하게 설정
 });
 
 // 도서 전체 목록 조회
@@ -17,7 +18,7 @@ export const getBooks = () => api.get();
 export const getBook = (id) => api.get(`/${id}`);
 
 // 도서 등록
-export const createBook = (data) => api.post("/", data);
+export const createBook = (data) => api.post("", data);
 
 // 도서 수정
 export const updateBook = (id, data) => api.put(`/${id}`, data);
