@@ -1,6 +1,6 @@
 # AIVLE_4차_미니프로젝트_AI를_활용한_북커버_만들기
 -----
-AIVLE에서 주관하는 4차 미니프로젝트에서 사용한 코드입니다. Spring, React를 활용하여 'AI를 활용한 북커버 만들기' 웹사이트를 구현하였습니다.
+AIVLE에서 주관하는 4차 미니프로젝트에서 사용한 코드입니다. Spring, React를 활용하여 'AI를 활용한 북커버 만들기' 웹사이트를 구현했습니다.
 
 👨‍🏫 프로젝트 개요
 ---
@@ -43,3 +43,14 @@ AIVLE에서 주관하는 4차 미니프로젝트에서 사용한 코드입니다
 
 - `DELETE /api/books/{id}`
 - 특정 ID의 도서 삭제
+
+🧑‍🤝‍🧑 개발자 소개
+---
+변성환 : Team Leader, PM
+김준호 : Front-End Development Lead(상세 역할), PPT Creator
+류근우 : Front-End Developer(상세 역할), Amanuensis
+양준모 : Front-End Developer(상세 역할), Reviewer
+양성현 : Front-End Developer(상세 역할), Presenter
+구현규 : Back-End Development Lead(상세 역할), Reviewer
+이소현 : Back-End Developer(상세 역할), PPT Creator
+김동영 : Back-End Developer(상세 역할), PPT Creator
