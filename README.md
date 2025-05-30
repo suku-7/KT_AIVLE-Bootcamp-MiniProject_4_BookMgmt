@@ -46,11 +46,11 @@ AIVLE에서 주관하는 4차 미니프로젝트에서 사용한 코드입니다
 
 🧑‍🤝‍🧑 개발자 소개
 ---
-변성환 : Team Leader, PM
-김준호 : Front-End Development Lead(상세 역할), PPT Creator
-류근우 : Front-End Developer(상세 역할), Amanuensis
-양준모 : Front-End Developer(상세 역할), Reviewer
-양성현 : Front-End Developer(상세 역할), Presenter
-구현규 : Back-End Development Lead(상세 역할), Reviewer
-이소현 : Back-End Developer(상세 역할), PPT Creator
-김동영 : Back-End Developer(상세 역할), PPT Creator
+-변성환 : Team Leader, PM
+-김준호 : Front-End Development Lead(상세 역할), PPT Creator
+-류근우 : Front-End Developer(상세 역할), Amanuensis
+-양준모 : Front-End Developer(상세 역할), Reviewer
+-양성현 : Front-End Developer(상세 역할), Presenter
+-구현규 : Back-End Development Lead(상세 역할), Reviewer
+-이소현 : Back-End Developer(상세 역할), PPT Creator
+-김동영 : Back-End Developer(상세 역할), PPT Creator
