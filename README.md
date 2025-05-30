@@ -73,3 +73,4 @@ Version Control: Git, GitHub
 
 📝 프로젝트 아키텍쳐
 ---
+![image](https://github.com/user-attachments/assets/0d89d68a-eea5-40de-87f1-50a5c7db3f9b)
