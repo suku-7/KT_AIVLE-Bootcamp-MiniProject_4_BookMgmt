@@ -89,7 +89,7 @@ function BookForm({ initialValues = {}, onSubmit }) {
             {/* 프롬프트 */}
             <div style={{ marginBottom: "20px" }}>
                 <label style={{ fontWeight: "bold", display: "block", marginBottom: "5px" }}>
-                    3. 표지에 대한 소개를 입력해주세요
+                    3. 표지에 대한 프롬프트를 입력해주세요
                 </label>
                 <textarea
                     name="cover_prompt"
