@@ -51,7 +51,8 @@ public class BookController {
     @DeleteMapping("/{id}")
     public ResponseEntity<CommonResponse<Void>> deleteBook(@PathVariable Long id) {
         // 삭제는 일반적으로 204 No Content 반환
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(bookService.deleteBook(id));
+        return ResponseEntity.ok().body(bookService.deleteBook(id));
+
     }
 
 }

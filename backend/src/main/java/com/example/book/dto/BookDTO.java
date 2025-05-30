@@ -18,8 +18,8 @@ public class BookDTO {
     @AllArgsConstructor
     public static class Post {
         private String title;
-        private String coverPrompt;
-        private String coverUrl;
+        private String cover_prompt;
+        private String cover_url;
         private String author;
         // subTitle, publisher, status 필드 삭제
     }
@@ -31,20 +31,11 @@ public class BookDTO {
     @AllArgsConstructor
     public static class Put {
         private String title;
-        private String coverPrompt;
-        private String coverUrl;
+        private String cover_prompt;
+        private String cover_url;
         private String author;
         // subTitle, publisher, status 필드 삭제
     }
-
-    // (PATCH) 명세서에 없으므로 삭제
-    // @Getter
-    // @Setter
-    // @NoArgsConstructor
-    // @AllArgsConstructor
-    // public static class Patch {
-    //     private Book.Status status;
-    // }
 
     // Response DTO (명세서 응답 데이터 구조에 맞춤)
     @Getter
@@ -53,21 +44,21 @@ public class BookDTO {
     public static class Response {
         private Long id;
         private String title;
-        private String coverPrompt;
-        private String coverUrl;
+        private String cover_prompt;
+        private String cover_url;
         private String author;
-        private LocalDateTime createdAt;
-        private LocalDateTime updatedAt;
+        private LocalDateTime created_at;
+        private LocalDateTime updated_at;
 
         // Book 엔티티를 받아서 DTO로 변환하는 생성자
         public Response(Book book) {
             this.id = book.getId();
             this.title = book.getTitle();
-            this.coverPrompt = book.getCoverPrompt();
-            this.coverUrl = book.getCoverUrl();
+            this.cover_prompt = book.getCover_prompt();
+            this.cover_url = book.getCover_url();
             this.author = book.getAuthor();
-            this.createdAt = book.getCreatedAt();
-            this.updatedAt = book.getUpdatedAt();
+            this.created_at = book.getCreated_at();
+            this.updated_at = book.getUpdated_at();
             // subTitle, publisher, status 필드 삭제
         }
     }

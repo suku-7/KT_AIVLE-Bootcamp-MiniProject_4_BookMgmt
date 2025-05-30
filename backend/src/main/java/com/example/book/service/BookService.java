@@ -11,7 +11,6 @@ public interface BookService {
     CommonResponse<List<BookDTO.Response>> findBooks();
     CommonResponse<BookDTO.Response> findBook(Long id);
     CommonResponse<BookDTO.Response> updateBook(Long id, BookDTO.Put bookDTO);
-    // CommonResponse<BookDTO.Response> updateBookStatus(Long id, Book.Status status); // 명세서에 없으므로 삭제
     CommonResponse<Void> deleteBook(Long id); // 삭제는 data가 없으므로 Void
     CommonResponse<List<BookDTO.Response>> searchBooksByTitle(String title);
 

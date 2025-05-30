@@ -25,8 +25,8 @@ public class BookServiceImpl implements BookService {
     public CommonResponse<BookDTO.Response> insertBook(BookDTO.Post bookDTO) {
         Book book = new Book();
         book.setTitle(bookDTO.getTitle());
-        book.setCoverPrompt(bookDTO.getCoverPrompt());
-        book.setCoverUrl(bookDTO.getCoverUrl());
+        book.setCover_prompt(bookDTO.getCover_prompt());
+        book.setCover_url(bookDTO.getCover_url());
         book.setAuthor(bookDTO.getAuthor());
 
         Book savedBook = bookRepository.save(book);
@@ -55,8 +55,8 @@ public class BookServiceImpl implements BookService {
                 .orElseThrow(() -> new EntityNotFoundException("Book with id " + id + " not found"));
 
         book.setTitle(bookDTO.getTitle());
-        book.setCoverPrompt(bookDTO.getCoverPrompt());
-        book.setCoverUrl(bookDTO.getCoverUrl());
+        book.setCover_prompt(bookDTO.getCover_prompt());
+        book.setCover_url(bookDTO.getCover_url());
         book.setAuthor(bookDTO.getAuthor());
 
         Book updatedBook = bookRepository.save(book);
