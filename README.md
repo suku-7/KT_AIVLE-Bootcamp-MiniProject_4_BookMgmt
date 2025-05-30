@@ -34,3 +34,8 @@ AIVLE에서 주관하는 4차 미니프로젝트에서 사용한 코드입니다
 
 - `PUT /api/books/{id}`
 - 형식은 3번의 json 형식과 동일
+
+### 5. 도서 삭제
+
+- `DELETE /api/books/{id}`
+- 특정 ID의 도서 삭제
