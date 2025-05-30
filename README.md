@@ -22,6 +22,7 @@ AIVLE에서 주관하는 4차 미니프로젝트에서 사용한 코드입니다
 
 - `POST /api/books`  
 - 아래와 같은 형식으로 POST
+```json
 {
   "title": "책 제목",
   "cover_prompt": "표지 프롬프트",
