@@ -89,13 +89,13 @@ function BookForm({ initialValues = {}, onSubmit }) {
             {/* 프롬프트 */}
             <div style={{ marginBottom: "20px" }}>
                 <label style={{ fontWeight: "bold", display: "block", marginBottom: "5px" }}>
-                    3. 작품에 대한 소개를 입력해주세요 (선택)
+                    3. 표지에 대한 소개를 입력해주세요
                 </label>
                 <textarea
                     name="cover_prompt"
                     value={coverPrompt}
                     onChange={(e) => setCoverPrompt(e.target.value)}
-                    placeholder="예: 태양 에너지를 원동력으로 사는 AI 친구 ‘클라라’가 사람을 이해해가는 여정을 담았습니다..."
+                    placeholder=""
                     maxLength={200}
                     rows={6}
                     style={{

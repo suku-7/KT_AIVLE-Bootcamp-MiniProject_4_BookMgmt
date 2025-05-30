@@ -1,75 +1,143 @@
 // src/pages/BookDetail.jsx
 
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { deleteBook, getBook } from "../api/bookApi";
 
 function BookDetail() {
+  const { id } = useParams();
   const navigate = useNavigate();
 
-  // 🟡 임시 데이터
-  const [title, setTitle] = useState("1984");
-  const [author, setAuthor] = useState("조지 오웰");
-  const [createdAt, setCreatedAt] = useState("2025-05-29T20:00:55");
-  const [updatedAt, setUpdatedAt] = useState("2025-05-29T23:30:10");
-  const [imageUrl, setImageUrl] = useState("https://");
+  const [book, setBook] = useState(null);
   const [localImage, setLocalImage] = useState(null);
+/*
+  // 데이터 불러오기
+  useEffect(() => {
+    getBook(id).then((res) => setBook(res.data)).catch(() => {
+      alert("도서 정보를 불러오는 데 실패했습니다.");
+    });
+  }, [id]);
+*/
 
-  const handleDelete = () => {
-    alert("도서가 삭제되었습니다.");
-    navigate("/");
-  };
+  useEffect(() => {  // 테스트데이터
+    // 백엔드 요청 대신 mock 데이터 사용
+    const mockBook = {
+      id: 1,
+      title: "모두의 자바",
+      author: "홍길동",
+      cover_prompt: "프롬프트 예시",
+      cover_url: "https://placehold.co/150x220",
+    };
+    setBook(mockBook);
+  }, []);
+  // 삭제 요청
+  const handleDelete = async () => {
+    const confirm = window.confirm("이 도서를 삭제하시겠습니까?");
+    if (!confirm) return;
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setLocalImage(URL.createObjectURL(file));
+    try {
+      const res = await deleteBook(id);
+      if (res.status === "success") {
+        alert(res.message);
+        navigate("/books");
+      } else {
+        alert("삭제에 실패했습니다.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("서버 오류로 인해 삭제에 실패했습니다.");
     }
   };
 
+  const handleEdit = () => {
+    navigate(`/books/${id}/edit`);
+  };
+
+  if (!book) return <p>불러오는 중...</p>;
+
   return (
-    <div style={{ display: "flex", padding: "20px", alignItems: "flex-start" }}>
-      {/* 이미지 영역 */}
-      <div style={{ flex: "1", paddingRight: "20px" }}>
-        <img
-          src={localImage || imageUrl}
-          alt="책 이미지"
-          style={{ maxWidth: "100%", height: "auto", borderRadius: "4px" }}
-        />
-        <div style={{ marginTop: "10px" }}>
-          <input type="file" onChange={handleFileChange} />
-        </div>
-      </div>
-
-      {/* 정보 입력 영역 */}
-      <div style={{ flex: "1" }}>
-        <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px", marginBottom: "20px" }}>
-          <button style={{ backgroundColor: "#f8d7da", padding: "10px", borderRadius: "5px" }} onClick={handleDelete}>
-            도서 삭제
-          </button>
-          <button style={{ backgroundColor: "#d1ecf1", padding: "10px", borderRadius: "5px" }} onClick={() => navigate("/")}>
-            Home
-          </button>
-        </div>
-
-        <div>
-          <label>작품 제목</label>
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} style={{ width: "100%", marginBottom: "10px" }} />
-
-          <label>작품 작가</label>
-          <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} style={{ width: "100%", marginBottom: "10px" }} />
-
-          <label>시간</label>
-          <div style={{ marginBottom: "10px" }}>
-            도서 생성 날짜 : {createdAt}<br />
-            도서 수정 날짜 : {updatedAt}
+      <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
+          <h2 style={{ fontWeight: "bold" }}></h2>
+          <div style={{ display: "flex", gap: "10px" }}>
+            <button
+                onClick={handleDelete}
+                style={{
+                  backgroundColor: "#f8d7da",
+                  border: "none",
+                  padding: "8px 16px",
+                  borderRadius: "5px",
+                  cursor: "pointer"
+                }}
+            >
+              도서 삭제
+            </button>
+            <button
+                onClick={handleEdit}
+                style={{
+                  backgroundColor: "#81c784",
+                  border: "none",
+                  padding: "8px 16px",
+                  borderRadius: "5px",
+                  cursor: "pointer"
+                }}
+            >
+              수정
+            </button>
+            <button
+                onClick={() => navigate("/")}
+                style={{
+                  backgroundColor: "#d1ecf1",
+                  border: "none",
+                  padding: "8px 16px",
+                  borderRadius: "5px",
+                  cursor: "pointer"
+                }}
+            >
+              Home
+            </button>
           </div>
+        </div>
 
-          <label>이미지 URL</label>
-          <input type="text" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} style={{ width: "100%" }} />
+        <div style={{ display: "flex", gap: "40px", alignItems: "flex-start" }}>
+          {/* 이미지 영역 */}
+          <img
+              src={book.cover_url || "https://placehold.co/200x300?text=No+Image"}
+              alt="책 이미지"
+              style={{ width: "280px", height: "auto", borderRadius: "8px" }}
+          />
+
+          {/* 도서 정보 */}
+          <div style={{ flex: "1" }}>
+            <label style={{ fontWeight: "bold" }}>작품 제목</label>
+            <input value={book.title} readOnly style={inputStyle} />
+
+            <label style={{ fontWeight: "bold" }}>작품 작가</label>
+            <input value={book.author} readOnly style={inputStyle} />
+
+            <label style={{ fontWeight: "bold" }}>시간</label>
+            <textarea
+                readOnly
+                style={{ ...inputStyle, height: "60px" }}
+                value={
+                  `도서 생성 날짜 : ${book.created_at || "N/A"}\n도서 수정 날짜 : ${book.updated_at || "N/A"}`
+                }
+            />
+
+          </div>
         </div>
       </div>
-    </div>
   );
 }
+
+const inputStyle = {
+  width: "100%",
+  marginBottom: "15px",
+  padding: "10px",
+  fontSize: "14px",
+  border: "1px solid #ccc",
+  borderRadius: "4px",
+  backgroundColor: "#f9f9f9"
+};
 
 export default BookDetail;
