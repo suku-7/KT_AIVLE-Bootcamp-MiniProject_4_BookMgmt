@@ -50,10 +50,10 @@ Version Control: Git, GitHub
 
 ### - 도서 상세 조회
 
-- `GET /api/books/{id}`
-- 설명: 등록된 도서 중 도서의 id를 이용해 특정 도서 조회
+  - `GET /api/books/{id}`
+  - 설명: 등록된 도서 중 도서의 id를 이용해 특정 도서 조회
 
-### - 도서 등록
+### -도서 등록
 
 - `POST /api/books`  
 - 아래와 같은 형식으로 POST
