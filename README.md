@@ -76,29 +76,38 @@ Version Control: Git, GitHub
   - 특정 ID의 도서 삭제
 
 ### 이미지 생성
-  `const handleGenerate = async () => {
-    const prompt = document.querySelector(`[name='${promptName}']`).value;
-    if (!prompt.trim()) {
-      alert("프롬프트를 입력하세요.");
-      return;
-    }
-    setLoading(true);
-    try {
-      const response = await axios.post(
-        "https://api.openai.com/v1/images/generations",
-        {
-          model: "dall-e-3",
-          prompt,
-          n: 1,
-          size: "1024x1792",
+  ```javascript
+const handleGenerate = async () => {
+  const prompt = document.querySelector(`[name='${promptName}']`).value;
+  if (!prompt.trim()) {
+    alert("프롬프트를 입력하세요.");
+    return;
+  }
+  setLoading(true);
+  try {
+    const response = await axios.post(
+      "https://api.openai.com/v1/images/generations",
+      {
+        model: "dall-e-3",
+        prompt,
+        n: 1,
+        size: "1024x1792",
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+          "Content-Type": "application/json",
         },
-        {
-          headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      }
+    );
 
-      const url = response.data.data[0].url;
-      document.querySelector(`[name='${urlName}']`).value = url;`
+    const url = response.data.data[0].url;
+    document.querySelector(`[name='${urlName}']`).value = url;
+  } catch (err) {
+    console.error("이미지 생성 중 오류:", err);
+  } finally {
+    setLoading(false);
+  }
+};
+
+
