@@ -77,6 +77,7 @@ Version Control: Git, GitHub
 
 ### 이미지 생성
   - 도서 등록 페이지에 이름, 작가, 표지 내용을 기입한 후 생성 버튼을 누르면 api와 연결되어 이미지 생성 후 URL 반환
+  - 등록 단계에서 이미지를 생성하지 않고 등록해도, 추후 도서 수정 페이지를 통해 이미지 생성 가능
   ```javascript
   const handleGenerate = async () => {
     const prompt = document.querySelector(`[name='${promptName}']`).value;
