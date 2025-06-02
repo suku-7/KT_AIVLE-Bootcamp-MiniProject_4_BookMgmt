@@ -76,38 +76,39 @@ Version Control: Git, GitHub
   - 특정 ID의 도서 삭제
 
 ### 이미지 생성
+  - 도서 등록 페이지에 이름, 작가, 표지 내용을 기입한 후 생성 버튼을 누르면 api와 연결되어 이미지 생성 후 URL 반환
   ```javascript
-const handleGenerate = async () => {
-  const prompt = document.querySelector(`[name='${promptName}']`).value;
-  if (!prompt.trim()) {
-    alert("프롬프트를 입력하세요.");
-    return;
-  }
-  setLoading(true);
-  try {
-    const response = await axios.post(
-      "https://api.openai.com/v1/images/generations",
-      {
-        model: "dall-e-3",
-        prompt,
-        n: 1,
-        size: "1024x1792",
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
-          "Content-Type": "application/json",
+  const handleGenerate = async () => {
+    const prompt = document.querySelector(`[name='${promptName}']`).value;
+    if (!prompt.trim()) {
+      alert("프롬프트를 입력하세요.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const response = await axios.post(
+        "https://api.openai.com/v1/images/generations",
+        {
+          model: "dall-e-3",
+          prompt,
+          n: 1,
+          size: "1024x1792",
         },
-      }
-    );
+        {
+          headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-    const url = response.data.data[0].url;
-    document.querySelector(`[name='${urlName}']`).value = url;
-  } catch (err) {
-    console.error("이미지 생성 중 오류:", err);
-  } finally {
-    setLoading(false);
-  }
-};
+      const url = response.data.data[0].url;
+      document.querySelector(`[name='${urlName}']`).value = url;
+    } catch (err) {
+      console.error("이미지 생성 중 오류:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
 
