@@ -10,6 +10,37 @@ AIVLE에서 주관하는 4차 미니프로젝트에서 사용한 코드입니다
 ---
 - 2025.05.29(수) ~ 2025.06.02(월)
 
+🧑‍🤝‍🧑 개발자 소개
+---
+- **변성환** - _Team Leader / PM_
+- **김준호** - _Front-End Development Lead / PPT Creator_
+- **류근우** - _Front-End Developer / Project Recorder_
+- **양준모** - _Front-End Developer / Code Reviewer_
+- **양성현** - _Front-End Developer) / Presenter_
+- **구현규** - _Back-End Development Lead / Code Reviewer_
+- **이소현** - _Back-End Developer / PPT Creator_
+- **김동영** - _Back-End Developer / PPT Creator_
+
+💻 개발환경
+---
+Version : Java 17
+IDE : IntelliJ, VS Code
+Framework : Spring Boot 2.7.11
+ORM : JPA
+Version Control: Git, GitHub
+
+⚙️ 기술 스택
+---
+- Back-End : Java, Spring Boot, Spring MVC (REST API), Spring Data JPA, Lombok
+- Front-End : JavaScript (ES6+), React, Axios, React Router, Material-UI (MUI)
+- DB : H2 (개발용)
+- API : RESTful API, OpenAI API (DALL·E)
+- Productivity Tools: Zoom, Microsoft Teams, Notion
+
+📝 프로젝트 아키텍쳐
+---
+![image](https://github.com/user-attachments/assets/0d89d68a-eea5-40de-87f1-50a5c7db3f9b)
+
 🙋‍♀️ 프로젝트 기능
 ---
 ### - 도서 목록 조회
@@ -43,34 +74,3 @@ AIVLE에서 주관하는 4차 미니프로젝트에서 사용한 코드입니다
 
 - `DELETE /api/books/{id}`
 - 특정 ID의 도서 삭제
-
-🧑‍🤝‍🧑 개발자 소개
----
-- **변성환** - _Team Leader / PM_
-- **김준호** - _Front-End Development Lead(상세 역할) / PPT Creator_
-- **류근우** - _Front-End Developer(상세 역할) / Project Recorder_
-- **양준모** - _Front-End Developer(상세 역할) / Code Reviewer_
-- **양성현** - _Front-End Developer(상세 역할) / Presenter_
-- **구현규** - _Back-End Development Lead(상세 역할) / Code Reviewer_
-- **이소현** - _Back-End Developer(상세 역할) / PPT Creator_
-- **김동영** - _Back-End Developer(상세 역할) / PPT Creator_
-
-💻 개발환경
----
-Version : Java 17
-IDE : IntelliJ, VS Code
-Framework : Spring Boot 2.7.11
-ORM : JPA
-Version Control: Git, GitHub
-
-⚙️ 기술 스택
----
-- Back-End : Java, Spring Boot, Spring MVC (REST API), Spring Data JPA, Lombok
-- Front-End : JavaScript (ES6+), React, Axios, React Router, Material-UI (MUI)
-- DB : H2 (개발용)
-- API : RESTful API, OpenAI API (DALL·E)
-- Productivity Tools: Zoom, Microsoft Teams, Notion
-
-📝 프로젝트 아키텍쳐
----
-![image](https://github.com/user-attachments/assets/0d89d68a-eea5-40de-87f1-50a5c7db3f9b)
