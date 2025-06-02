@@ -82,7 +82,6 @@ Version Control: Git, GitHub
       alert("프롬프트를 입력하세요.");
       return;
     }
-
     setLoading(true);
     try {
       const response = await axios.post(
