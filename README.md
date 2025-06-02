@@ -41,6 +41,13 @@ Version Control: Git, GitHub
 ---
 ![image](https://github.com/user-attachments/assets/0d89d68a-eea5-40de-87f1-50a5c7db3f9b)
 
+- DB TABLE
+![image](https://github.com/user-attachments/assets/c124b7b5-fa9d-4321-8d0f-2f7ce81f2841)
+
+🤖 API 설계 목록
+---
+![image](https://github.com/user-attachments/assets/3393f96d-9d18-49e3-bdf6-704e37591be2)
+
 🙋‍♀️ 프로젝트 기능
 ---
 ###  도서 목록 조회
