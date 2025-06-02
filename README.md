@@ -156,5 +156,11 @@ Version Control: Git, GitHub
       setLoading(false);
     }
   };
+  ```
 
+---
 
+### 📦 **포팅 가이드**
+
+프로젝트 실행 및 배포 방법은 아래 포팅 가이드를 참고해주세요:
+###  👉 [PORTING\_GUIDE.md](./PORTING_GUIDE.md)
