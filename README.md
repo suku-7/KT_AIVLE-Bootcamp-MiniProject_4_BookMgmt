@@ -65,12 +65,41 @@ Version Control: Git, GitHub
     "author": "작가 이름"
   }
 ```
-### - 도서 수정
+###  도서 수정
 
   - `PUT /api/books/{id}`
   - 형식은 3번의 json 형식과 동일
 
-### - 도서 삭제
+###  도서 삭제
 
   - `DELETE /api/books/{id}`
   - 특정 ID의 도서 삭제
+
+### 이미지 생성
+  `const handleGenerate = async () => {
+    const prompt = document.querySelector(`[name='${promptName}']`).value;
+    if (!prompt.trim()) {
+      alert("프롬프트를 입력하세요.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await axios.post(
+        "https://api.openai.com/v1/images/generations",
+        {
+          model: "dall-e-3",
+          prompt,
+          n: 1,
+          size: "1024x1792",
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const url = response.data.data[0].url;
+      document.querySelector(`[name='${urlName}']`).value = url;`
