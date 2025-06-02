@@ -50,8 +50,13 @@ sourceSets {
 	}
 }
 
+tasks.withType(JavaCompile).configureEach {
+	options.encoding = 'UTF-8'
+}
+
 processResources {
 	dependsOn "copyReactBuildFiles"
+	filteringCharset = 'UTF-8'
 }
 
 task installReact(type: Exec) {
