@@ -68,6 +68,13 @@ Version Control: Git, GitHub
 
   - `GET /api/books/{id}`
   - 설명: 등록된 도서 중 도서의 id를 이용해 특정 도서 조회
+  ```javascript
+  // 2. 도서 상세 조회 (GET /api/books/{id})
+    @GetMapping("/{id}")
+    public ResponseEntity<CommonResponse<BookDTO.Response>> getBook(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(bookService.findBook(id));
+    }
+  ```
 
 ### 도서 등록
 
@@ -81,15 +88,37 @@ Version Control: Git, GitHub
     "author": "작가 이름"
   }
 ```
+```javascript
+   // 3. 도서 등록 (POST /api/books)
+    @PostMapping
+    public ResponseEntity<CommonResponse<BookDTO.Response>> createBook(@RequestBody BookDTO.Post bookDTO) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(bookService.insertBook(bookDTO));
+    }
+  ```
 ###  도서 수정
 
   - `PUT /api/books/{id}`
   - 형식은 3번의 json 형식과 동일
+```javascript
+   // 4. 도서 수정 (PUT /api/books/{id})
+    @PutMapping("/{id}")
+    public ResponseEntity<CommonResponse<BookDTO.Response>> updateBook(
+            @PathVariable("id") Long id, @RequestBody BookDTO.Put bookDTO) {
+        return ResponseEntity.ok(bookService.updateBook(id, bookDTO));
+    }
+  ```
 
 ###  도서 삭제
 
   - `DELETE /api/books/{id}`
   - 특정 ID의 도서 삭제
+```javascript
+    // 5. 도서 삭제 (DELETE /api/books/{id})
+    @DeleteMapping("/{id}")
+    public ResponseEntity<CommonResponse<Void>> deleteBook(@PathVariable("id") Long id) {
+        return ResponseEntity.ok().body(bookService.deleteBook(id));
+    }
+  ```
 
 ### 이미지 생성
   - 도서 등록 페이지에 이름, 작가, 표지 내용을 기입한 후 생성 버튼을 누르면 api와 연결되어 이미지 생성 후 URL 반환
