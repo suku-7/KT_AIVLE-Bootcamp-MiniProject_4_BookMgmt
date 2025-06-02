@@ -55,6 +55,14 @@ Version Control: Git, GitHub
 
   - `GET /api/books`
   - 설명: 등록된 도서 목록 전체 조회
+  ```javascript
+    // 1. 도서 목록 조회 (GET /api/books)
+    @GetMapping
+    public ResponseEntity<CommonResponse<List<BookDTO.Response>>> getBooks(
+            @RequestParam(value = "title", required = false) String title) {
+        return ResponseEntity.ok(bookService.findBooks());
+    }
+  ```
 
 ###  도서 상세 조회
 
