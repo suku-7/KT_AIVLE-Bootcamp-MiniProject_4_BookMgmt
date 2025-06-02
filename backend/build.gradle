@@ -39,3 +39,46 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+def frontendDir = file('../frontend')  // backend 기준
+
+sourceSets {
+	main {
+		resources {
+			srcDirs = ["$projectDir/src/main/resources"]
+		}
+	}
+}
+
+processResources {
+	dependsOn "copyReactBuildFiles"
+}
+
+task installReact(type: Exec) {
+	workingDir frontendDir
+	inputs.dir frontendDir
+	group = BasePlugin.BUILD_GROUP
+	if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+		commandLine "npm.cmd", "install"
+	} else {
+		commandLine "npm", "install"
+	}
+}
+
+task buildReact(type: Exec) {
+	dependsOn "installReact"
+	workingDir frontendDir
+	inputs.dir frontendDir
+	group = BasePlugin.BUILD_GROUP
+	if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+		commandLine "npm.cmd", "run", "build"
+	} else {
+		commandLine "npm", "run", "build"
+	}
+}
+
+task copyReactBuildFiles(type: Copy) {
+	dependsOn "buildReact"
+	from "$frontendDir/dist" // Vite는 기본적으로 dist에 빌드함
+	into "$projectDir/src/main/resources/static"
+}
