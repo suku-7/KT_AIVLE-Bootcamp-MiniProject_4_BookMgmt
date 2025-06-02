@@ -60,7 +60,7 @@ function BookEdit() {
         setFeedbackMessage('도서가 성공적으로 수정되었습니다!');
         setFeedbackSeverity('success');
         setTimeout(() => {
-          navigate(`/books/${id}`);
+          navigate("/");
         }, 1500);
       } else {
         const errorMessage = response.data.message || '도서 수정에 실패했습니다.';
@@ -129,12 +129,6 @@ function BookEdit() {
         ) : (
             <BookForm initialValues={book} onSubmit={handleSubmit} />
         )}
-
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
-          <Button variant="outlined" onClick={() => navigate(`/books/${id}`)}>
-            상세 페이지로 돌아가기
-          </Button>
-        </Box>
       </Box>
   );
 }

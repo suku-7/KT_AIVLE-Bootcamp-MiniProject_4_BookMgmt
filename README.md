@@ -10,50 +10,16 @@ AIVLE에서 주관하는 4차 미니프로젝트에서 사용한 코드입니다
 ---
 - 2025.05.29(수) ~ 2025.06.02(월)
 
-🙋‍♀️ 프로젝트 기능
----
-### - 도서 목록 조회
-
-- `GET /api/books`
-- 설명: 등록된 도서 목록 전체 조회
-
-### - 도서 상세 조회
-
-- `GET /api/books/{id}`
-- 설명: 등록된 도서 중 도서의 id를 이용해 특정 도서 조회
-
-### - 도서 등록
-
-- `POST /api/books`  
-- 아래와 같은 형식으로 POST
-```json
-{
-  "title": "책 제목",
-  "cover_prompt": "표지 프롬프트",
-  "cover_url": "생성된 이미지 링크",
-  "author": "작가 이름"
-}
-```
-### - 도서 수정
-
-- `PUT /api/books/{id}`
-- 형식은 3번의 json 형식과 동일
-
-### - 도서 삭제
-
-- `DELETE /api/books/{id}`
-- 특정 ID의 도서 삭제
-
 🧑‍🤝‍🧑 개발자 소개
 ---
 - **변성환** - _Team Leader / PM_
-- **김준호** - _Front-End Development Lead(상세 역할) / PPT Creator_
-- **류근우** - _Front-End Developer(상세 역할) / Project Recorder_
-- **양준모** - _Front-End Developer(상세 역할) / Code Reviewer_
-- **양성현** - _Front-End Developer(상세 역할) / Presenter_
-- **구현규** - _Back-End Development Lead(상세 역할) / Code Reviewer_
-- **이소현** - _Back-End Developer(상세 역할) / PPT Creator_
-- **김동영** - _Back-End Developer(상세 역할) / PPT Creator_
+- **김준호** - _Front-End Development Lead / PPT Creator_
+- **류근우** - _Front-End Developer / Project Recorder_
+- **양준모** - _Front-End Developer / Code Reviewer_
+- **양성현** - _Front-End Developer) / Presenter_
+- **구현규** - _Back-End Development Lead / Code Reviewer_
+- **이소현** - _Back-End Developer / PPT Creator_
+- **김동영** - _Back-End Developer / PPT Creator_
 
 💻 개발환경
 ---
@@ -74,3 +40,76 @@ Version Control: Git, GitHub
 📝 프로젝트 아키텍쳐
 ---
 ![image](https://github.com/user-attachments/assets/0d89d68a-eea5-40de-87f1-50a5c7db3f9b)
+
+🙋‍♀️ 프로젝트 기능
+---
+###  도서 목록 조회
+
+  - `GET /api/books`
+  - 설명: 등록된 도서 목록 전체 조회
+
+###  도서 상세 조회
+
+  - `GET /api/books/{id}`
+  - 설명: 등록된 도서 중 도서의 id를 이용해 특정 도서 조회
+
+### 도서 등록
+
+  - `POST /api/books`  
+  - 아래와 같은 형식으로 POST
+  ```json
+  {
+    "title": "책 제목",
+    "cover_prompt": "표지 프롬프트",
+    "cover_url": "생성된 이미지 링크",
+    "author": "작가 이름"
+  }
+```
+###  도서 수정
+
+  - `PUT /api/books/{id}`
+  - 형식은 3번의 json 형식과 동일
+
+###  도서 삭제
+
+  - `DELETE /api/books/{id}`
+  - 특정 ID의 도서 삭제
+
+### 이미지 생성
+  - 도서 등록 페이지에 이름, 작가, 표지 내용을 기입한 후 생성 버튼을 누르면 api와 연결되어 이미지 생성 후 URL 반환
+  - 등록 단계에서 이미지를 생성하지 않고 등록해도, 추후 도서 수정 페이지를 통해 이미지 생성 가능
+  ```javascript
+  const handleGenerate = async () => {
+    const prompt = document.querySelector(`[name='${promptName}']`).value;
+    if (!prompt.trim()) {
+      alert("프롬프트를 입력하세요.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const response = await axios.post(
+        "https://api.openai.com/v1/images/generations",
+        {
+          model: "dall-e-3",
+          prompt,
+          n: 1,
+          size: "1024x1792",
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const url = response.data.data[0].url;
+      document.querySelector(`[name='${urlName}']`).value = url;
+    } catch (err) {
+      console.error("이미지 생성 중 오류:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
