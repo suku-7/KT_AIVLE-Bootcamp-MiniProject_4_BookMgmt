@@ -43,34 +43,34 @@ Version Control: Git, GitHub
 
 🙋‍♀️ 프로젝트 기능
 ---
-### * 도서 목록 조회
+###  도서 목록 조회
 
   - `GET /api/books`
   - 설명: 등록된 도서 목록 전체 조회
 
-### - 도서 상세 조회
+###  도서 상세 조회
 
   - `GET /api/books/{id}`
   - 설명: 등록된 도서 중 도서의 id를 이용해 특정 도서 조회
 
-### -도서 등록
+### 도서 등록
 
-- `POST /api/books`  
-- 아래와 같은 형식으로 POST
-```json
-{
-  "title": "책 제목",
-  "cover_prompt": "표지 프롬프트",
-  "cover_url": "생성된 이미지 링크",
-  "author": "작가 이름"
-}
+  - `POST /api/books`  
+  - 아래와 같은 형식으로 POST
+  ```json
+  {
+    "title": "책 제목",
+    "cover_prompt": "표지 프롬프트",
+    "cover_url": "생성된 이미지 링크",
+    "author": "작가 이름"
+  }
 ```
 ### - 도서 수정
 
-- `PUT /api/books/{id}`
-- 형식은 3번의 json 형식과 동일
+  - `PUT /api/books/{id}`
+  - 형식은 3번의 json 형식과 동일
 
 ### - 도서 삭제
 
-- `DELETE /api/books/{id}`
-- 특정 ID의 도서 삭제
+  - `DELETE /api/books/{id}`
+  - 특정 ID의 도서 삭제
