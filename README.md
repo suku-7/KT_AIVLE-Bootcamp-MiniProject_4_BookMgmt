@@ -5,19 +5,56 @@
 - 도서 등록, 조회, 수정, 삭제와 함께 AI 이미지 생성 기능 을 연동하여 커버 이미지를 생성
 - 풀스택 개발과 외부 API(OpenAI) 활용 경험을 목표로, 요구사항 분석부터 ERD 설계, 구현까지 실습
 
--------------------------------------------------------------
+---
 📅 개발 기간 : 2025.05.29 (목) ~ 06.02(월)
+
 👥 AI_04반_11조 : 변성환, 구현규, 김동영, 김준호, 류근우, 양성현, 양준모, 이소현
+---
+🧑‍🤝‍🧑 개발자 소개
+---
+- **변성환** - _Team Leader / PM_
+- **김준호** - _Front-End Development Lead / PPT Creator_
+- **류근우** - _Front-End Developer / Project Recorder_
+- **양준모** - _Front-End Developer / Code Reviewer_
+- **양성현** - _Front-End Developer) / Presenter_
+- **구현규** - _Back-End Development Lead / Code Reviewer_
+- **이소현** - _Back-End Developer / PPT Creator_
+- **김동영** - _Back-End Developer / PPT Creator_
+---
 
--------------------------------------------------------------
+**개발 환경 / 기술 스택**
 
-**✅ AI 04반 11조 담당자, 역할, 할 일 (To-Do)**
-담당자	역할	sub	할일 (To-Do)
-변성환	PM	조장	FE, BE 작업 진행사항 점검 및 조율
-김준호	FE Leader	PPT	FE 프로그램 통합 관리, 이미지 생성기능 구현
-양성현	FE	발표	FE BookList 화면 제작, 검색기능 구현
-양준모	FE	검토	FE BookEdit 화면 추가, 삭제 기능, 수정 기능 구현
-류근우	FE	서기	FE BookDetails 화면 추가
-구현규	BE Leader	검토	BE 프로그램 통합 관리
-이소현	BE	PPT	BE 프로그램 제작
-김동영	BE	PPT	BE 프로그램 제작
+### 👨‍💻 Front-End
+
+- **Language**: JavaScript (ES6+)
+- **Framework**: React 19.x
+- **Build Tool**: Vite
+- **Routing**: React Router
+- **HTTP Client**: Axios
+- **UI Library**: Material-UI (@mui/material)
+- **Styling**: Emotion (@emotion/react, @emotion/styled)
+- **Date/Time**: Moment.js
+- **IDE**: Visual Studio Code
+
+### 👨‍💻 Back-End
+
+- **Language**: Java 17
+- **Framework**: Spring Boot 3.5.0
+- **Architecture**: RESTful API, MVC
+- **ORM**: JPA (Hibernate)
+- **Database**: H2 (In-memory, development)
+- **Build Tool**: Gradle
+- **Other**: Lombok, CORS 설정
+- **IDE**: IntelliJ IDEA
+
+### 🤖 AI Integration
+
+- **OpenAI API**: GPT-4.1-mini, DALL·E 3
+- **Features**:
+    - 프롬프트 기반 도서 정보 요약
+    - 도서 커버 이미지 생성
+
+### 📦 Version Control & Tools
+
+- **VCS**: Git & GitHub
+- **Collaboration Tools**: Notion, Zoom, Microsoft Teams
