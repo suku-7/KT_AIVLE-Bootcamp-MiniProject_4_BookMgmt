@@ -81,72 +81,14 @@
 - **VCS**: Git & GitHub
 - **Collaboration Tools**: Notion, Zoom, Microsoft Teams
 --- 
-## 📝 ERD/API
+## **📝 ERD/API**
 ![스크린샷 2025-06-05 213837](https://github.com/user-attachments/assets/2c4e2960-6e38-412b-9160-e44aa146e762)
 
 ---
-**프로젝트 구조**
+## **📝 프로젝트 구조**
 
-aivle_4th_bookmp/
+![스크린샷 2025-06-05 214138](https://github.com/user-attachments/assets/11811e67-f0ef-406b-a95d-55e27f8e136a)  
+![스크린샷 2025-06-05 214148](https://github.com/user-attachments/assets/12f4d5d1-a42e-443b-88f6-7b5af8626052)  
 
-├── backend/                         # 백엔드 (Spring Boot)
-│   ├── build/
-│   ├── .gradle/
-│   ├── gradle/
-│   ├── src/
-│   │   └── main/
-│   │       ├── java/com/example/book/
-│   │       │   ├── config/             # 보안 및 웹 설정
-│   │       │   │   ├── SecurityConfig.java
-│   │       │   │   └── WebConfig.java
-│   │       │   ├── controller/         # REST API 컨트롤러
-│   │       │   │   └── BookController.java
-│   │       │   ├── domain/             # 도메인 엔티티
-│   │       │   │   └── Book.java
-│   │       │   ├── dto/                # 데이터 전송 객체
-│   │       │   │   ├── BookDTO.java
-│   │       │   │   └── CommonResponse.java
-│   │       │   ├── repository/         # 데이터 접근 계층 (JPA)
-│   │       │   │   └── BookRepository.java
-│   │       │   ├── service/            # 비즈니스 로직
-│   │       │   │   ├── BookService.java
-│   │       │   │   └── BookServiceImpl.java
-│   │       │   └─── BookApplication.java
-│   │       └── resources/
-│   │           ├── application.yml     # 환경 설정
-│   │           ├── data.sql            # 초기 데이터
-│   │           └── static/             # 정적 리소스
-│   ├── build.gradle
-│   ├── gradlew
-│   ├── gradlew.bat
-│   ├── settings.gradle
-│   ├── .gitignore
-│   └── [README.md](http://readme.md/)
-
-└── frontend/                         # 프론트엔드 (React + Vite)
-├── public/
-│   └── images/                    # 이미지 리소스
-├── src/
-│   ├── api/                       # API 통신 모듈
-│   │   └── bookApi.js
-│   ├── components/                # 재사용 가능한 컴포넌트
-│   │   ├── BookCard.jsx
-│   │   ├── BookForm.jsx
-│   │   ├── BookModal.jsx
-│   │   └── CoverGeneratorButton.jsx
-│   ├── pages/                     # 페이지 단위
-│   │   └── BookList.jsx
-│   ├── router/                    # 라우팅 구성
-│   │   └── Router.jsx
-│   ├── App.jsx                    # 루트 컴포넌트
-│   └── main.jsx                  
-├── .env                           # 환경 변수(OpenAI API 저장)
-├── .gitignore
-├── eslint.config.js              
-├── index.html                    
-├── package.json
-├── package-lock.json
-├── vite.config.js                
-└── [README.md](http://readme.md/)
 
 
