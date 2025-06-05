@@ -6,9 +6,8 @@
 - 풀스택 개발과 외부 API(OpenAI) 활용 경험을 목표로, 요구사항 분석부터 ERD 설계, 구현까지 실습
 
 ---
-📅 개발 기간 : 2025.05.29 (목) ~ 06.02(월)
-
-👥 AI_04반_11조 : 변성환, 구현규, 김동영, 김준호, 류근우, 양성현, 양준모, 이소현
+- 📅 개발 기간 : 2025.05.29 (목) ~ 06.02(월)
+- 👥 AI_04반_11조 : 변성환, 구현규, 김동영, 김준호, 류근우, 양성현, 양준모, 이소현
 ---
 🧑‍🤝‍🧑 개발자 소개
 ---
@@ -20,6 +19,18 @@
 - **구현규** - _Back-End Development Lead / Code Reviewer_
 - **이소현** - _Back-End Developer / PPT Creator_
 - **김동영** - _Back-End Developer / PPT Creator_
+---
+[KT-AIVLE] 미니프로젝트 4차 Notion 상세 설명 및 회의록 https://www.notion.so/KT-AIVLE-4-1f8d02208fab80248207e20fb64d51df
+
+
+
+---
+📝 도서 관리 시스템 결과물
+
+![스크린샷 2025-06-02 145205](https://github.com/user-attachments/assets/e83a36dd-fcb5-48da-ba2c-ddee1ea0440f)
+
+![스크린샷 2025-06-02 152711](https://github.com/user-attachments/assets/1f0b6308-f12b-4c46-8bdf-a490ed0cb69a)
+
 ---
 
 **개발 환경 / 기술 스택**
