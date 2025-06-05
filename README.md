@@ -1,4 +1,4 @@
-# [KT-AIVLE] 미니 프로젝트 4차 
+# [KT-AIVLE] 미니 프로젝트 4차 도서관리 시스템 웹서비스 만들기
 
 ## **📝 프로젝트 목적** 
 
@@ -20,8 +20,8 @@
 - **이소현** - _Back-End Developer / PPT Creator_
 - **김동영** - _Back-End Developer / PPT Creator_
 ---
-### 📁 도서 관리 시스템-Notion  
-[KT-AIVLE 미니프로젝트 4차 Notion 상세 설명 및 회의록](https://www.notion.so/KT-AIVLE-4-1f8d02208fab80248207e20fb64d51df)  
+### 📁 미니 프로젝트 4차 Notion  
+[KT-AIVLE 미니 프로젝트 4차 도서관리 시스템 웹서비스 만들기 Notion 상세 설명 및 회의록](https://www.notion.so/KT-AIVLE-4-1f8d02208fab80248207e20fb64d51df)  
 - [도서 관리 시스템 - 프로젝트 포팅 가이드](https://www.notion.so/206d02208fab80578d09e07158b42d2f)  
 - [도서 관리 시스템 - 상세 API 명세서](https://www.notion.so/API-203d02208fab801e85ffc0868f606468)  
 ---
