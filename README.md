@@ -86,11 +86,6 @@
 ![스크린샷 2025-06-05 213837](https://github.com/user-attachments/assets/2c4e2960-6e38-412b-9160-e44aa146e762)
 
 ---
-## **📝 프로젝트 구조**
-
-<img width="1212" height="826" alt="image" src="https://github.com/user-attachments/assets/d10177dc-ca3e-4f65-a004-b17041872f8e" />
-
----
 
 ## **🚀 backend Features**
 ![스크린샷 2025-06-05 214321](https://github.com/user-attachments/assets/50289877-2e61-49a4-b3e0-1d4155cbfda2)
