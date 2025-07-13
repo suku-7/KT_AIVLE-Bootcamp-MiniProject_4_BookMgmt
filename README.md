@@ -41,7 +41,8 @@
   
 --- 
 ## **📝 프로젝트 기본 아키텍처**
-![스크린샷 2025-06-02 213307](https://github.com/user-attachments/assets/3be55bce-c382-4d91-8023-82807d0fad7f)
+
+<img width="2088" height="929" alt="스크린샷 2025-06-02 213307" src="https://github.com/user-attachments/assets/0ca13ef9-9d9a-45a5-bf92-6d217388b663" />
 
 --- 
 ## 📝 **개발 환경 / 기술 스택**
