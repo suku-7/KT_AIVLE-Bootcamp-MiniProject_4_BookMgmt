@@ -87,8 +87,7 @@
 ---
 ## **📝 프로젝트 구조**
 
-![스크린샷 2025-06-05 214138](https://github.com/user-attachments/assets/11811e67-f0ef-406b-a95d-55e27f8e136a)  
-![스크린샷 2025-06-05 214148](https://github.com/user-attachments/assets/12f4d5d1-a42e-443b-88f6-7b5af8626052)  
+<img width="1212" height="826" alt="image" src="https://github.com/user-attachments/assets/d10177dc-ca3e-4f65-a004-b17041872f8e" />
 
 ---
 
